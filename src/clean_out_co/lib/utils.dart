@@ -25,10 +25,12 @@ class MyColors {
   static Color greenColor = Color(0xFF026928);
   static Color lightGreyColor = Color(0xFFF2F2F2);
   static Color medGreyColor = Color(0xFF7E8389);
+  static Color lightOrangeColor = Color(4294962104);
+  static Color lightGreenColor = Color(4288863928);
 }
 
 class Constants {
   Constants._();
-  static const double padding =20;
-  static const double avatarRadius =45;
+  static const double padding = 20;
+  static const double avatarRadius = 45;
 }
