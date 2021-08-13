@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:clean_out_co/utils.dart';
 import 'package:clean_out_co/pages/welcome_page.dart';
-import 'package:clean_out_co/pages/home.dart';
-import 'package:clean_out_co/pages/profile_page.dart';
+import 'package:clean_out_co/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,15 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'CleanOut.Co',
       theme: ThemeData(
+        canvasColor: Colors.transparent,
+        fontFamily: 'Montserrat',
         primarySwatch: createMaterialColor(MyColors.greenColor),
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => WelcomePage(),
-        '/home': (context) => Home(),
-        '/profile': (context) => ProfilePage(),
-        // TODO: Tambah route lagi.
-      }
+      home: WelcomePage(),
+      initialRoute: '/welcomepage',
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

@@ -9,6 +9,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  static String routeName = "/profilepage";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

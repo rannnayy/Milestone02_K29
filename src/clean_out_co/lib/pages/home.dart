@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 
 
 class Home extends StatefulWidget {
+  static var routename;
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  static String routeName = "/homepage";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [

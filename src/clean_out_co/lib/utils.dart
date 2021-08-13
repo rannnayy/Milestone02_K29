@@ -23,4 +23,12 @@ MaterialColor createMaterialColor(Color color) {
 class MyColors {
   static Color orangeColor = Color(0xFFFC9732);
   static Color greenColor = Color(0xFF026928);
+  static Color lightGreyColor = Color(0xFFF2F2F2);
+  static Color medGreyColor = Color(0xFF7E8389);
+}
+
+class Constants {
+  Constants._();
+  static const double padding =20;
+  static const double avatarRadius =45;
 }
