@@ -1,6 +1,6 @@
 # clean_out_co
 
-bySampahWarrior
+by SampahWarrior
 
 ## Getting Started
 

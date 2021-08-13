@@ -12,6 +12,10 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context){
     SizeConfig _conf = SizeConfig(context);
 
+    Future.delayed(Duration(seconds: 2), () {
+      Navigator.pushNamed(context, '/home');
+    });
+
     return Scaffold(
       body: Center(
         child: Image(
