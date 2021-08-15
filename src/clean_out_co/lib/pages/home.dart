@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
               margin: EdgeInsets.all(5),
               child: Image.asset(
                 '$imagePath',
-                scale: 7.5,
+                scale: 2.5,
                 color: Colors.white,
               ),
             ),
@@ -220,9 +220,9 @@ class _HomeState extends State<Home> {
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        myCard('Pesan', 'assets/images/recycle.png',
+                        myCard('Pesan', 'assets/images/recycle_200px.png',
                           'Sudah pilah sampahmu? Pesan sekarang!'),
-                        myCard('Save Our Planet!', 'assets/images/globe.png',
+                        myCard('Save Our Planet!', 'assets/images/globe_200px.png',
                           'Belum tahu cara memilah sampah yang benar? ikuti tutorial ini!')
                         
                       ],
