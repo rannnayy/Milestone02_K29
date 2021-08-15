@@ -1,5 +1,4 @@
-import 'package:clean_out_co/pages/bantuan.dart';
-import 'package:clean_out_co/pages/home_screen.dart';
+import 'package:clean_out_co/pages/main_page.dart';
 import 'package:clean_out_co/pages/profile_page.dart';
 import 'package:clean_out_co/pages/search_order.dart';
 import 'package:clean_out_co/pages/order_rating.dart';
@@ -15,7 +14,7 @@ class _BottomNavigationCleanOutState extends State<BottomNavigationCleanOut> {
   int _selectedIndex = 0;
 
   List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
+    MainPage(),
     SearchOrder(),
     ProfilePage(),
     OrderRating()
@@ -39,19 +38,19 @@ class _BottomNavigationCleanOutState extends State<BottomNavigationCleanOut> {
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
-                title: Text('Home'),
+                label: 'Home',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.article),
-                title: Text('Activity'),
+                label: 'Activity',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.person),
-                title: Text('Profile'),
+                label: 'Profile',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings),
-                title: Text('Settings'),
+                label: 'Settings',
               ),
             ],
             currentIndex: _selectedIndex,
