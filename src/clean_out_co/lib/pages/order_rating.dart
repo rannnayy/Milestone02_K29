@@ -13,21 +13,21 @@ class _OrderRatingState extends State<OrderRating> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: MyColors.greenColor,
-          title: Text('Order rating ceritanya'),
-          centerTitle: true,
-        ),
-        body: Stack(
+      appBar: AppBar(
+        backgroundColor: MyColors.greenColor,
+        title: Text('Order rating ceritanya'),
+        centerTitle: true,
+      ),
+      body: Stack(
           children: <Widget>[
-           twoptsButton(),
+            twoptsButton(),
             fourptsButton(),
             fiveptsButton(),
             tenptsButton(),
             selesaiButton(),
             commentField(),
           ]
-        ),
+      ),
 
     );
   }

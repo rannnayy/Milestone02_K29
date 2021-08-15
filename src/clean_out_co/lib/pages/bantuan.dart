@@ -4,13 +4,13 @@ import '../utils.dart';
 class Bantuan extends StatelessWidget {
   final isi = TextStyle(
     fontSize: 14.0,
-    fontFamily: 'AbhayaLibre',
+    fontFamily: 'Abhaya Libre',
   );
 
   final judul = TextStyle(
     fontWeight: FontWeight.w600,
     fontSize: 18.0,
-    fontFamily: 'AbhayaLibre',
+    fontFamily: 'Abhaya Libre',
   );
 
   @override
@@ -34,7 +34,7 @@ class Bantuan extends StatelessWidget {
                       'Bantuan',
                       style: TextStyle(
                           fontSize: 48.0,
-                          fontFamily: 'AbhayaLibre',
+                          fontFamily: 'Abhaya Libre',
                           fontWeight: FontWeight.w700,
                           letterSpacing: 1.85,
                           shadows: [
