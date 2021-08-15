@@ -2,6 +2,7 @@ import 'package:clean_out_co/pages/bantuan.dart';
 import 'package:clean_out_co/pages/main_page.dart';
 import 'package:clean_out_co/pages/profile_page.dart';
 import 'package:clean_out_co/pages/search_order.dart';
+import 'package:clean_out_co/pages/order_rating.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationCleanOut extends StatefulWidget {
@@ -17,7 +18,7 @@ class _BottomNavigationCleanOutState extends State<BottomNavigationCleanOut> {
     MainPage(),
     SearchOrder(),
     ProfilePage(),
-    Bantuan()
+    OrderRating(),
   ];
 
   void _onItemTapped(int index) {

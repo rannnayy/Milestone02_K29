@@ -134,11 +134,11 @@ Widget selesaiButton() {
 }
 
 Widget commentField() {
-  final maxLines = 8;
+  final maxLines = 5;
 
   return Container(
-    alignment: Alignment(0, 48.5),
-    margin: EdgeInsets.all(12),
+    alignment: Alignment(0, 850),
+    margin: EdgeInsets.all(10),
     height: maxLines * 24.0,
     child: TextField(
       keyboardType: TextInputType.text,
