@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clean_out_co/utils.dart';
 
@@ -19,7 +18,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
