@@ -1,3 +1,4 @@
+import 'package:clean_out_co/widget/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 
@@ -232,7 +233,8 @@ class _HomeState extends State<Home> {
             )
           ],
         ),
-      )
+      ),
+        bottomNavigationBar: BottomNavigationCleanOut(),
     );
   }
 }
