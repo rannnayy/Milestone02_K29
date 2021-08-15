@@ -1,7 +1,4 @@
-import 'package:clean_out_co/pages/main_page.dart';
-import 'package:clean_out_co/pages/profile_page.dart';
-import 'package:clean_out_co/pages/search_order.dart';
-import 'package:clean_out_co/pages/order_rating.dart';
+import 'package:clean_out_co/pages/home.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationCleanOut extends StatefulWidget {
@@ -13,13 +10,6 @@ class BottomNavigationCleanOut extends StatefulWidget {
 class _BottomNavigationCleanOutState extends State<BottomNavigationCleanOut> {
   int _selectedIndex = 0;
 
-  List<Widget> _widgetOptions = <Widget>[
-    MainPage(),
-    SearchOrder(),
-    ProfilePage(),
-    OrderRating()
-  ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -28,41 +18,43 @@ class _BottomNavigationCleanOutState extends State<BottomNavigationCleanOut> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+    return Container(
+      height: 52,
+      decoration: BoxDecoration(
+        color: Colors.white,
       ),
-      bottomNavigationBar: SizedBox(
-        height: 52,
-        child: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.article),
-                label: 'Activity',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'Profile',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: 'Settings',
-              ),
-            ],
-            currentIndex: _selectedIndex,
-            selectedItemColor: Colors.green,
-            unselectedItemColor: Colors.grey,
-            onTap: _onItemTapped,
-            backgroundColor: Colors.transparent,
-            type: BottomNavigationBarType.fixed,
-            selectedFontSize: 12,
-            showUnselectedLabels: true,
-            elevation: 0
-        ),),
+      child: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: _selectedIndex == 1
+                    ? new Icon(Icons.home)
+                    : new Icon(Icons.home),
+                title: Text('Home')),
+            BottomNavigationBarItem(
+                icon: _selectedIndex == 0
+                    ? new Icon(Icons.article)
+                    : new Icon(Icons.article),
+                title: Text('Activity')),
+            BottomNavigationBarItem(
+                icon: _selectedIndex == 0
+                    ? new Icon(Icons.person)
+                    : new Icon(Icons.person),
+                title: Text('My Account')),
+            BottomNavigationBarItem(
+                icon: _selectedIndex == 0
+                    ? new Icon(Icons.settings)
+                    : new Icon(Icons.settings),
+                title: Text('Settings'))
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.green,
+          unselectedItemColor: Colors.grey,
+          onTap: _onItemTapped,
+          backgroundColor: Colors.transparent,
+          type: BottomNavigationBarType.fixed,
+          selectedFontSize: 12,
+          showUnselectedLabels: true,
+          elevation: 0),
     );
   }
 }
