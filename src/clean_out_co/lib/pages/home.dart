@@ -10,7 +10,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   static String routeName = "/homepage";
 
-  Widget MyCard(String title, String imagepath, String desc){
+  Widget myCard(String title, String imagePath, String desc){
     return Card(
       color: Color(0xffA2DEB8),
       shape: RoundedRectangleBorder(
@@ -18,11 +18,11 @@ class _HomeState extends State<Home> {
       ),
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+        padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
         child: Column(
           children: [
             Text(
-              title,
+              '$title',
               style: TextStyle(
                   fontFamily: 'Abhaya Libre',
                   fontSize: 24,
@@ -34,16 +34,16 @@ class _HomeState extends State<Home> {
                   shape: BoxShape.circle,
                   color: Color(0xff026928)
               ),
-              padding: EdgeInsets.all(7.5),
+              padding: EdgeInsets.all(10),
               margin: EdgeInsets.all(5),
               child: Image.asset(
-                imagepath,
+                '$imagePath',
                 scale: 7.5,
                 color: Colors.white,
               ),
             ),
             Text(
-              desc,
+              '$desc',
               style: TextStyle(
                   fontFamily: 'Abhaya Libre',
                   fontSize: 14,
@@ -220,9 +220,9 @@ class _HomeState extends State<Home> {
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        MyCard('Pesan', 'assets/images/recycle.png',
+                        myCard('Pesan', 'assets/images/recycle.png',
                           'Sudah pilah sampahmu? Pesan sekarang!'),
-                        MyCard('Kesan', 'assets/images/globe.png',
+                        myCard('Save Our Planet!', 'assets/images/globe.png',
                           'Belum tahu cara memilah sampah yang benar? ikuti tutorial ini!')
                         
                       ],

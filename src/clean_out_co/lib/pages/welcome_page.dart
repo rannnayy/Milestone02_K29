@@ -10,16 +10,16 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   static String routeName = "/welcomepage";
-  void AfterDelay() {
+  void afterDelay() {
     Future.delayed(Duration(seconds: 2), () {
-      Navigator.of(context).pushNamed('/homepage');
+      Navigator.of(context).pushReplacementNamed('/homepage');
     });
   }
 
   @override
   void initState() {
     super.initState();
-    AfterDelay();
+    afterDelay();
   }
   Widget build(BuildContext context){
     SizeConfig _conf = SizeConfig(context);
