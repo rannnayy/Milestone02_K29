@@ -137,17 +137,16 @@ Widget commentField() {
   final maxLines = 5;
 
   return Container(
-    alignment: Alignment(0, 850),
-    margin: EdgeInsets.all(10),
-    height: maxLines * 24.0,
+    alignment: Alignment(0,0.78),
+    margin: EdgeInsets.all(12),
     child: TextField(
-      keyboardType: TextInputType.text,
-      textInputAction: TextInputAction.done,
-      maxLines: maxLines,
       decoration: InputDecoration(
         hintText: "Masukkan Komentar",
+        border: OutlineInputBorder(),
         fillColor: Colors.grey[300],
         filled: true,
+        isDense: true,
+        contentPadding: EdgeInsets.fromLTRB(10, 90, 10, 100),
       ),
     ),
   );
