@@ -12,7 +12,7 @@ class _WelcomePageState extends State<WelcomePage> {
   static String routeName = "/welcomepage";
   void AfterDelay() {
     Future.delayed(Duration(seconds: 2), () {
-      Navigator.of(context).pushNamed('/readyorder');
+      Navigator.of(context).pushNamed('/homepage');
     });
   }
 

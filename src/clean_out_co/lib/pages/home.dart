@@ -9,6 +9,54 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   static String routeName = "/homepage";
+
+  Widget MyCard(String title, String imagepath, String desc){
+    return Card(
+      color: Color(0xffA2DEB8),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20)
+      ),
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+        child: Column(
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                  fontFamily: 'Abhaya Libre',
+                  fontSize: 24,
+                  fontWeight: FontWeight.w800
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xff026928)
+              ),
+              padding: EdgeInsets.all(7.5),
+              margin: EdgeInsets.all(5),
+              child: Image.asset(
+                imagepath,
+                scale: 7.5,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              desc,
+              style: TextStyle(
+                  fontFamily: 'Abhaya Libre',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w800
+              ),
+              textAlign: TextAlign.center,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +84,7 @@ class _HomeState extends State<Home> {
                             ),
                             SizedBox(height: 10.0,),
                             Text(
-                                'Usada Pekora',
+                                'User 1',
                                 style: TextStyle(
                                     fontFamily: 'Montserrat',
                                     fontSize: 16,
@@ -59,10 +107,10 @@ class _HomeState extends State<Home> {
                         ),
                         child: CircleAvatar(
                           radius: 30.0,
-                          backgroundImage: AssetImage('assets/images/pekora.jpg')
+                          backgroundImage: AssetImage('assets/images/driver profile.png')
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/profile');
+                          Navigator.of(context).pushNamed('/profilepage');
                         },
                       )
                     ],
@@ -172,42 +220,11 @@ class _HomeState extends State<Home> {
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        Container(
-                          height: 200,
-                          color: Colors.transparent,
-                          child: Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Color(0xffA2DEB8)
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Pesan',
-                                    style: TextStyle(
-                                        fontFamily: 'Abhaya Libre',
-                                        fontWeight: FontWeight.w800,
-                                        fontSize: 24
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          height: 200,
-                          color: Colors.transparent,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Color(0xffA2DEB8)
-                            ),
-                          ),
-                        )
+                        MyCard('Pesan', 'assets/images/recycle.png',
+                          'Sudah pilah sampahmu? Pesan sekarang!'),
+                        MyCard('Kesan', 'assets/images/globe.png',
+                          'Belum tahu cara memilah sampah yang benar? ikuti tutorial ini!')
+                        
                       ],
                     )
                 ),
