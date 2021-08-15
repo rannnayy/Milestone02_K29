@@ -1,6 +1,7 @@
 import 'package:clean_out_co/widget/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_out_co/pages/main_page.dart';
+import 'package:clean_out_co/pages/profile_page.dart';
 
 class Home extends StatefulWidget {
   static var routename;
@@ -11,230 +12,80 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   static String routeName = "/homepage";
 
-  Widget myCard(String title, String imagePath, String desc){
-    return Card(
-      color: Color(0xffA2DEB8),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20)
+  int bottomSelectedIndex = 0;
+
+  List<BottomNavigationBarItem> buildBottomNavBarItems() {
+    return [
+      BottomNavigationBarItem(
+        icon: new Icon(Icons.home),
+        label:'Home',
       ),
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-        child: Column(
-          children: [
-            Text(
-              '$title',
-              style: TextStyle(
-                  fontFamily: 'Abhaya Libre',
-                  fontSize: 24,
-                  fontWeight: FontWeight.w800
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Color(0xff026928)
-              ),
-              padding: EdgeInsets.all(10),
-              margin: EdgeInsets.all(5),
-              child: Image.asset(
-                '$imagePath',
-                scale: 2.5,
-                color: Colors.white,
-              ),
-            ),
-            Text(
-              '$desc',
-              style: TextStyle(
-                  fontFamily: 'Abhaya Libre',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w800
-              ),
-              textAlign: TextAlign.center,
-            )
-          ],
-        ),
+      BottomNavigationBarItem(
+        icon: new Icon(Icons.article),
+        label: 'Activity',
       ),
-    );
+      BottomNavigationBarItem(
+        icon: Icon(Icons.person),
+        label: 'My Account',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.settings),
+        label: 'Settings',
+      )
+    ];
   }
-  
+
+  PageController pageController = PageController(
+    initialPage: 0,
+    keepPage: true,
+  );
+
+  void pageChanged(int index) {
+    setState(() {
+      bottomSelectedIndex = index;
+    });
+  }
+
+  void bottomTapped(int index) {
+    setState(() {
+      bottomSelectedIndex = index;
+      pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
+        child: PageView(
+          controller: pageController,
+          onPageChanged: (index) {
+            pageChanged(index);
+          },
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Welcome back',
-                              style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  fontSize: 14,
-                                  color: Color(0xff898A8D)
-                              ),
-                            ),
-                            SizedBox(height: 10.0,),
-                            Text(
-                                'User 1',
-                                style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600
-
-                                )
-                            )
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          color: Colors.transparent,
-                        ),
-                      ),
-                      ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                          shadowColor: MaterialStateProperty.all<Color>(Colors.transparent)
-                        ),
-                        child: CircleAvatar(
-                          radius: 30.0,
-                          backgroundImage: AssetImage('assets/images/driver profile.png')
-                        ),
-                        onPressed: () {
-                          Navigator.of(context).pushNamed('/profilepage');
-                        },
-                      )
-                    ],
-                  ),
-                  SizedBox(height: 30,),
-                  Container(
-                    height: 107,
-                    width: 285,
-                    color: Colors.transparent,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Color(0xff026928),
-                          borderRadius: BorderRadius.all(Radius.circular(10.0))
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10.0,
-                            vertical:15.0
-                        ),
-                        child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    child: Text(
-                                      'Today\'s Contribution',
-                                      style: TextStyle(
-                                          fontFamily: 'Montserrat',
-                                          fontSize: 14,
-                                          color: Colors.white
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Container(
-                                      color: Colors.transparent,
-                                    ),
-                                  ),
-                                  Container(
-                                    child: Text(
-                                      '40 pts',
-                                      style: TextStyle(
-                                          fontFamily: 'Montserrat',
-                                          fontSize: 14,
-                                          color: Colors.white
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                                  color: Colors.white
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      for (int i=0; i<10; i++) Icon(
-                                        Icons.delete_outline,
-                                        size: 25,
-                                        color: (i<4) ? Colors.black : Colors.grey,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ]
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-
-            ),
-            SizedBox(
-                height: 10
-            ),
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: Color(0xff026928),
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(30), bottom: Radius.zero)
-                ),
-                child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 20,
-                      horizontal: 30,
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'Apa kontribusimu hari ini?',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                        myCard('Pesan', 'assets/images/recycle_200px.png',
-                          'Sudah pilah sampahmu? Pesan sekarang!'),
-                        myCard('Save Our Planet!', 'assets/images/globe_200px.png',
-                          'Belum tahu cara memilah sampah yang benar? ikuti tutorial ini!')
-                        
-                      ],
-                    )
-                ),
-              ),
-            )
+            MainPage(),
+            Text('Activity Here'), //TODO: Activity.dart plz
+            ProfilePage(),
+            Text('Settings goes here'), //TODO: settings.dart plz
           ],
         ),
       ),
-        bottomNavigationBar: BottomNavigationCleanOut(),
+      bottomNavigationBar: BottomNavigationBar(
+        items: buildBottomNavBarItems(),
+        currentIndex: bottomSelectedIndex,
+        onTap: (index) {
+          bottomTapped(index);
+        },
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.grey,
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+        selectedFontSize: 12,
+        showUnselectedLabels: true,
+      ),
     );
   }
+
+
 }

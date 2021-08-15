@@ -1,4 +1,3 @@
-import 'package:clean_out_co/pages/home.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationCleanOut extends StatefulWidget {
