@@ -28,4 +28,5 @@ class MyColors {
   static Color lightOrangeColor = Color(4294962104);
   static Color lightGreenColor = Color(4288863928);
   static Color paleGreenColor = Color(0xFFA2DEB8);
+  static Color interGreyColor = Color(0xFF979797);
 }
