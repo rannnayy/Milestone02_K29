@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import '../utils.dart';
 
-class PrivacyPolicy extends StatelessWidget {
+class PrivacyPolicy extends StatefulWidget {
+  static var routeName;
+  @override
+  _PrivacyPolicyState createState() => _PrivacyPolicyState();
+}
+
+class _PrivacyPolicyState extends State<PrivacyPolicy> {
+  static var routeName = '/privacypolicy';
+
   final isi = TextStyle(
     fontSize: 14.0,
     fontFamily: 'AbhayaLibre',

@@ -11,6 +11,7 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(20),
@@ -67,12 +68,14 @@ class _SettingsState extends State<Settings> {
                     SizedBox(height: 2,),
                     SettingButton(
                       icon: Icons.notifications_none,
-                      text: 'Notifikasi'
+                      text: 'Notifikasi',
+                      onPressed: () => Navigator.of(context).pushNamed('/notifsetting'),
                     ),
                     SizedBox(height: 10,),
                     SettingButton(
                       icon: Icons.language,
                       text: 'Bahasa',
+                      onPressed: () => Navigator.of(context).pushNamed('/langsetting'),
                     ),
                     SizedBox(height: 50),
                     Padding(
@@ -97,26 +100,31 @@ class _SettingsState extends State<Settings> {
                     SettingButton(
                       icon: Icons.help_outline,
                       text: 'Bantuan',
+                      onPressed: () => Navigator.of(context).pushNamed('/bantuan'),
                     ),
                     SizedBox(height: 10,),
                     SettingButton(
                       icon: Icons.info_outline,
                       text: 'Privacy Policy',
+                      onPressed: () => Navigator.of(context).pushNamed('/privacypolicy'),
                     ),
                     SizedBox(height: 10,),
                     SettingButton(
                       icon: Icons.info_outline,
                       text: 'Terms of Services',
+                      onPressed: () => Navigator.of(context).pushNamed('/termsofservice'),
                     ),
                     SizedBox(height: 10,),
                     SettingButton(
                       icon: Icons.star_border,
-                      text: 'Beri Kami Penilaian'
+                      text: 'Beri Kami Penilaian',
+                      onPressed: () => Navigator.of(context).pushNamed('/rating'),
                     ),
                     SizedBox(height: 10,),
                     SettingButton(
                       icon: Icons.format_quote,
                       text: 'Tentang CleanOut.Co',
+                      onPressed: () => Navigator.of(context).pushNamed('/aboutus'),
                     ),
                   ],
                 ),

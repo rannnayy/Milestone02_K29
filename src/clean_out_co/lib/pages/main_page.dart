@@ -6,7 +6,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  Widget myCard(String title, String imagePath, String desc){
+  Widget myCard(String title, String imagePath, String desc, String nextPage){
     return Card(
       color: Color(0xffA2DEB8),
       shape: RoundedRectangleBorder(
@@ -23,7 +23,7 @@ class _MainPageState extends State<MainPage> {
                   fontFamily: 'Abhaya Libre',
                   fontSize: 24,
                   fontWeight: FontWeight.w800
-              ),
+              ), //
             ),
             Container(
               decoration: BoxDecoration(
@@ -32,10 +32,17 @@ class _MainPageState extends State<MainPage> {
               ),
               padding: EdgeInsets.all(8),
               margin: EdgeInsets.all(5),
-              child: Image.asset(
-                '$imagePath',
-                scale: 3.0,
-                color: Colors.white,
+              child: Material(
+                child: InkResponse(
+                  onTap: () => Navigator.of(context).pushNamed(nextPage),
+                  child: Image.asset(
+                    imagePath,
+                    scale: 3.0,
+                    color: Colors.white,
+                    height: 80,
+                    width: 80,
+                  ),
+                ),
               ),
             ),
             Text(
@@ -215,17 +222,10 @@ class _MainPageState extends State<MainPage> {
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        InkWell(
-                          onTap: () {},
-                          child: myCard('Pesan', 'assets/images/recycle_200px.png',
-                              'Sudah pilah sampahmu? Pesan sekarang!', '/readyorder'),
-                        ),
-                        InkWell(
-                          onTap: () {},
-                          child: myCard('Save Our Planet!', 'assets/images/globe_200px.png',
-                              'Belum tahu cara memilah sampah yang benar? ikuti tutorial ini!', '/saveourplanet'),
-                        )
-
+                        myCard('Pesan', 'assets/images/recycle white.png',
+                            'Sudah pilah sampahmu? Pesan sekarang!', '/readyorder'),
+                        myCard('Save Our Planet!', 'assets/images/white globe.png',
+                            'Belum tahu cara memilah sampah yang benar? ikuti tutorial ini!', '/saveourplanet')
                       ],
                     )
                 ),

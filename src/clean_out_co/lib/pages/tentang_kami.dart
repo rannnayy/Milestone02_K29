@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import '../utils.dart';
 
-class TentangKami extends StatelessWidget {
+class TentangKami extends StatefulWidget {
+  static var routeName;
+  @override
+  _TentangKamiState createState() => _TentangKamiState();
+}
+
+class _TentangKamiState extends State<TentangKami> {
+  static var routeName = '/aboutus';
+
   final isi = TextStyle(
     fontSize: 14.0,
     fontFamily: 'AbhayaLibre',

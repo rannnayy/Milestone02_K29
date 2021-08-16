@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import '../utils.dart';
 
-class TermsCondition extends StatelessWidget {
+class TermsCondition extends StatefulWidget {
+  static var routeName;
+  @override
+  _TermsConditionState createState() => _TermsConditionState();
+}
+
+class _TermsConditionState extends State<TermsCondition> {
+  static var routeName = '/termsofservice';
   final isi = TextStyle(
     fontSize: 14.0,
     fontFamily: 'AbhayaLibre',

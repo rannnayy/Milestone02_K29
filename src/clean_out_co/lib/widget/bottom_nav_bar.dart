@@ -1,8 +1,7 @@
-import 'package:clean_out_co/pages/bantuan.dart';
 import 'package:clean_out_co/pages/main_page.dart';
 import 'package:clean_out_co/pages/profile_page.dart';
 import 'package:clean_out_co/pages/ready_order.dart';
-import 'package:clean_out_co/pages/save_our_planet.dart';
+import 'package:clean_out_co/pages/settings.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationCleanOut extends StatefulWidget {
@@ -16,9 +15,9 @@ class _BottomNavigationCleanOutState extends State<BottomNavigationCleanOut> {
 
   List<Widget> _widgetOptions = <Widget>[
     MainPage(),
-    ReadyOrder(), // Activity()
+    ReadyOrder(),
     ProfilePage(),
-    SaveOurPlanet(), // Setting()
+    Settings(), // Setting()
   ];
 
   void _onItemTapped(int index) {
@@ -30,6 +29,7 @@ class _BottomNavigationCleanOutState extends State<BottomNavigationCleanOut> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),

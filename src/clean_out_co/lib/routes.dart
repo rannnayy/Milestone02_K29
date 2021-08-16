@@ -1,5 +1,10 @@
+import 'package:clean_out_co/pages/language.dart';
+import 'package:clean_out_co/pages/notif.dart';
+import 'package:clean_out_co/pages/privacy_policy.dart';
 import 'package:clean_out_co/pages/profile_page.dart';
 import 'package:clean_out_co/pages/save_our_planet.dart';
+import 'package:clean_out_co/pages/tentang_kami.dart';
+import 'package:clean_out_co/pages/terms_condition.dart';
 import 'package:flutter/material.dart';
 import 'package:clean_out_co/pages/welcome_page.dart';
 import 'package:clean_out_co/pages/ready_order.dart';
@@ -13,8 +18,9 @@ import 'package:clean_out_co/pages/step_six.dart';
 import 'package:clean_out_co/pages/listed_user.dart';
 import 'package:clean_out_co/pages/page_daftar.dart';
 import 'package:clean_out_co/pages/choose_role.dart';
-import 'package:clean_out_co/pages/save_our_planet.dart';
 import 'package:clean_out_co/pages/rating.dart';
+import 'package:clean_out_co/pages/bantuan.dart';
+import 'package:clean_out_co/pages/settings.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -76,8 +82,22 @@ class RouteGenerator {
         return FadeRoute(page: SaveOurPlanet());
       case '/rating':
         return FadeRoute(page: Rating());
-      // case '/setting':
-      //   return
+      case '/setting':
+        return FadeRoute(page: Settings());
+      case '/bantuan':
+        return FadeRoute(page: Bantuan());
+      case '/notifsetting':
+        return FadeRoute(page: NotifSetting());
+      case 'langsetting':
+        return FadeRoute(page: LangSetting());
+      case '/bantuan':
+        return FadeRoute(page: Bantuan());
+      case '/privacypolicy':
+        return FadeRoute(page: PrivacyPolicy());
+      case '/termsofservice':
+        return FadeRoute(page: TermsCondition());
+      case '/aboutus':
+        return FadeRoute(page: TentangKami());
       default:
         return FadeRoute(page: WelcomePage());
     }

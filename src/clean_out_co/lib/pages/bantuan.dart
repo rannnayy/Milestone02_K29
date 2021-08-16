@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import '../utils.dart';
 
-class Bantuan extends StatelessWidget {
+class Bantuan extends StatefulWidget {
+  static var routeName;
+  @override
+  _BantuanState createState() => _BantuanState();
+}
+
+class _BantuanState extends State<Bantuan> {
+  static var routeName = '/bantuan';
+
   final isi = TextStyle(
     fontSize: 14.0,
     fontFamily: 'Abhaya Libre',

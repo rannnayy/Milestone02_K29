@@ -1,7 +1,6 @@
 import 'package:clean_out_co/widget/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
-
 class Home extends StatefulWidget {
   static var routename;
   @override
@@ -14,9 +13,10 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Home',
-      home: BottomNavigationCleanOut(),
+    return SafeArea(
+      child: Scaffold(
+        bottomNavigationBar: BottomNavigationCleanOut(),
+      ),
     );
   }
 }

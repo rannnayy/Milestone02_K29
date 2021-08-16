@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import '../utils.dart';
 
-class Rating extends StatelessWidget {
+class Rating extends StatefulWidget {
+  static var routeName;
+  @override
+  _RatingState createState() => _RatingState();
+}
+
+class _RatingState extends State<Rating> {
   static var routeName = '/rating';
 
   @override
