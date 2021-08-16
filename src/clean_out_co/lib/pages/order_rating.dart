@@ -16,7 +16,7 @@ class _OrderRatingState extends State<OrderRating> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: MyColors.greenColor,
-        title: Text('Order rating ceritanya'),
+        title: Text('Order Rating'),
         centerTitle: true,
       ),
       body: Stack(
