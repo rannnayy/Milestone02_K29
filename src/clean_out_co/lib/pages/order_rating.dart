@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:clean_out_co/utils.dart';
+import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class OrderRating extends StatefulWidget {
   const OrderRating({Key? key}) : super(key: key);
@@ -26,7 +27,14 @@ class _OrderRatingState extends State<OrderRating> {
             tenptsButton(),
             selesaiButton(),
             commentField(),
-          ]
+            StarRating(),
+            BeriRating(),
+            InfoWarrior(),
+            WarriorName(),
+            IconWarrior(),
+            GetPointText(),
+
+          ],
       ),
 
     );
@@ -35,7 +43,7 @@ class _OrderRatingState extends State<OrderRating> {
 
 Widget twoptsButton() {
   return Align(
-    alignment: Alignment(-0.9, 0.1),
+    alignment: Alignment(-0.9, 0.25),
     child: ElevatedButton(
       child: Text(
         '2 pts',
@@ -47,7 +55,8 @@ Widget twoptsButton() {
       style: ElevatedButton.styleFrom(
           fixedSize: Size(90, 15),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50))
+              borderRadius: BorderRadius.circular(50)),
+        primary: Colors.green[500],
       ),
     ),
   );
@@ -55,7 +64,7 @@ Widget twoptsButton() {
 
 Widget fourptsButton() {
   return Align(
-    alignment: Alignment(-0.3, 0.1),
+    alignment: Alignment(-0.3, 0.25),
     child: ElevatedButton(
       child: Text(
         '4 pts',
@@ -67,7 +76,8 @@ Widget fourptsButton() {
       style: ElevatedButton.styleFrom(
           fixedSize: Size(90, 15),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50))
+              borderRadius: BorderRadius.circular(50)),
+        primary: Colors.green[500],
       ),
     ),
   );
@@ -75,7 +85,7 @@ Widget fourptsButton() {
 
 Widget fiveptsButton() {
   return Align(
-    alignment: Alignment(0.3, 0.1),
+    alignment: Alignment(0.3, 0.25),
     child: ElevatedButton(
       child: Text(
         '5 pts',
@@ -87,7 +97,8 @@ Widget fiveptsButton() {
       style: ElevatedButton.styleFrom(
           fixedSize: Size(90, 15),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50))
+              borderRadius: BorderRadius.circular(50)),
+        primary: Colors.green[500],
       ),
     ),
   );
@@ -95,7 +106,7 @@ Widget fiveptsButton() {
 
 Widget tenptsButton() {
   return Align(
-    alignment: Alignment(0.9, 0.1),
+    alignment: Alignment(0.9, 0.25),
     child: ElevatedButton(
       child: Text(
         '10 pts',
@@ -107,7 +118,8 @@ Widget tenptsButton() {
       style: ElevatedButton.styleFrom(
           fixedSize: Size(90, 15),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50))
+              borderRadius: BorderRadius.circular(50)),
+        primary: Colors.green[500],
       ),
     ),
   );
@@ -127,7 +139,8 @@ Widget selesaiButton() {
       style: ElevatedButton.styleFrom(
           fixedSize: Size(300, 50),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50))
+              borderRadius: BorderRadius.circular(50)),
+        primary: Colors.green[500],
       ),
     ),
   );
@@ -146,8 +159,98 @@ Widget commentField() {
         fillColor: Colors.grey[300],
         filled: true,
         isDense: true,
-        contentPadding: EdgeInsets.fromLTRB(10, 90, 10, 100),
+        contentPadding: EdgeInsets.fromLTRB(10, 40, 10, 100),
       ),
     ),
+  );
+}
+
+Widget StarRating()
+{
+  var rating = 3.0;
+  return Align(
+    alignment: Alignment(0.0, 0.08),
+    child: SmoothStarRating(
+      rating: rating,
+      isReadOnly: false,
+      size: 40,
+      filledIconData: Icons.star,
+      halfFilledIconData: Icons.star_half,
+      defaultIconData: Icons.star_border,
+      starCount: 5,
+      allowHalfRating: false,
+      spacing: 2.0,
+      onRated: (value) {
+        print("rating value -> $value");
+        // print("rating value dd -> ${value.truncate()}");
+      },
+    ),
+  );
+}
+
+Widget BeriRating()
+{
+  return Align(
+    alignment: Alignment(0.0, -0.05),
+    child : Text(
+      'Beri Rating',
+      style: TextStyle(
+        fontSize: 30,
+          fontWeight: FontWeight.bold,
+      )
+    )
+  );
+}
+
+Widget InfoWarrior()
+{
+  return Align(
+      alignment: Alignment(0.0, -0.60),
+      child : Text(
+          'Informasi Warrior',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 24
+          )
+      )
+  );
+}
+
+Widget WarriorName()
+{
+  return Align(
+      alignment: Alignment(0.5, -0.30),
+      child : Text(
+          'Andi Budi Cahya',
+          style: TextStyle(
+              fontSize: 25
+          )
+      )
+  );
+}
+
+Widget IconWarrior()
+{
+  return Align(
+    alignment : Alignment (-0.75, -0.35),
+    child : Icon(
+      Icons.account_circle,
+      color: Colors.green[500],
+      size: 125.0,
+    )
+  );
+}
+
+Widget GetPointText()
+{
+  return Align(
+      alignment: Alignment(0.0, -0.8),
+      child : Text(
+          'Kamu mendapatkan xx poin!',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 24
+          )
+      )
   );
 }
