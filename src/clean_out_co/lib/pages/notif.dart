@@ -6,11 +6,15 @@ import 'package:clean_out_co/utils.dart';
 import 'package:clean_out_co/size_config.dart';
 
 class NotifSetting extends StatefulWidget {
+  static var routeName;
+
   @override
   _NotifSettingState createState() => _NotifSettingState();
 }
 
 class _NotifSettingState extends State<NotifSetting> {
+  static var routeName = '/notifsetting';
+
   bool isON = false;
   bool isON1 = false;
   bool isON2 = false;

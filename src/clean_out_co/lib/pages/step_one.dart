@@ -146,7 +146,7 @@ class _BodyStepOneState extends State<BodyStepOne> {
                     fontFam: 'Abhaya Libre',
                     fontColor: createMaterialColor(MyColors.greenColor),
                     textData: "Ikuti tutorial ini!",
-                    nextPage: "/readyorder", // "/saveourplanet"
+                    nextPage: "/saveourplanet",
                     fontWgt: FontWeight.w700,
                     condition: "Save Our Planet?",
                   ),

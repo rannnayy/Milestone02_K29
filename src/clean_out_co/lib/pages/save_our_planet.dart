@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import '../utils.dart';
 
-class SaveOurPlanet extends StatelessWidget {
+class SaveOurPlanet extends StatefulWidget {
+  static var routeName;
+
+  @override
+  _SaveOurPlanetState createState() => _SaveOurPlanetState();
+}
+
+class _SaveOurPlanetState extends State<SaveOurPlanet> {
+  static var routeName = '/saveourplanet';
+
   final isi = TextStyle(
     fontSize: 16.0,
     fontFamily: 'AbhayaLibre',

@@ -15,7 +15,7 @@ class _ListedAsUserState extends State<ListedAsUser> {
   static var routeName = '/listeduser';
   void afterDelay() {
     Future.delayed(Duration(seconds: 5), () {
-      Navigator.of(context).pushNamed('/stepone');
+      Navigator.of(context).pushNamed('/homepage');
     });
   }
 

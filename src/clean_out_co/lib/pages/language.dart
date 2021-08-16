@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:clean_out_co/size_config.dart';
 import 'package:clean_out_co/utils.dart';
 

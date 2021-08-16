@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../utils.dart';
 
 class Rating extends StatelessWidget {
+  static var routeName = '/rating';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +47,7 @@ class Rating extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => Navigator.of(context).pushNamed('/homepage'),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 116.0, vertical: 20.0),
@@ -73,7 +75,7 @@ class Rating extends StatelessWidget {
                                     color: MyColors.greenColor),
                               ),
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () => Navigator.of(context).pushNamed('/homepage'),
                                 child: Text(
                                   'Complain',
                                   style: TextStyle(

@@ -28,7 +28,7 @@ class _StepSixOrderState extends State<StepSixOrder> {
 
   void afterDelay() {
     Future.delayed(Duration(seconds: 5), () {
-      Navigator.of(context).pushNamed('/stepone');
+      Navigator.of(context).pushNamed('/rating'); // /stepseven
     });
   }
 
@@ -202,7 +202,7 @@ class _StepSixOrderState extends State<StepSixOrder> {
                     fontFam: 'Abhaya Libre',
                     fontColor: createMaterialColor(MyColors.greenColor),
                     textData: "Ikuti tutorial ini!",
-                    nextPage: "/readyorder", // "/saveourplanet"
+                    nextPage: "/saveourplanet",
                     fontWgt: FontWeight.w700,
                     condition: "Save Our Planet?",
                   ),
