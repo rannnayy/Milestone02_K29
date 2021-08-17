@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:clean_out_co/utils.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class OrderRating extends StatefulWidget {
   const OrderRating({Key? key}) : super(key: key);
@@ -11,9 +11,15 @@ class OrderRating extends StatefulWidget {
 
 class _OrderRatingState extends State<OrderRating> {
   static String routeName = "/orderrating";
+
+  var _initialRating = 3.0;
+  IconData? _selectedIcon;
+  late double _rating;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: MyColors.greenColor,
         title: Text('Order Rating'),
@@ -25,9 +31,9 @@ class _OrderRatingState extends State<OrderRating> {
             fourptsButton(),
             fiveptsButton(),
             tenptsButton(),
-            selesaiButton(),
+            selesaiButton(context),
             commentField(),
-            StarRating(),
+            starRating(),
             BeriRating(),
             InfoWarrior(),
             WarriorName(),
@@ -39,6 +45,31 @@ class _OrderRatingState extends State<OrderRating> {
 
     );
   }
+
+  Widget starRating()
+  {
+    return RatingBar.builder(
+      initialRating: _initialRating,
+      minRating: 1,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      unratedColor: Colors.amber.withAlpha(50),
+      itemCount: 5,
+      itemSize: 50.0,
+      itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+      itemBuilder: (context, _) => Icon(
+        _selectedIcon ?? Icons.star,
+        color: Colors.amber,
+      ),
+      onRatingUpdate: (rating) {
+        setState(() {
+          _rating = rating;
+        });
+      },
+      updateOnDrag: true,
+    );
+  }
+
 }
 
 Widget twoptsButton() {
@@ -125,7 +156,7 @@ Widget tenptsButton() {
   );
 }
 
-Widget selesaiButton() {
+Widget selesaiButton(BuildContext context) {
   return Align(
     alignment: Alignment(0.0, 1.0),
     child: ElevatedButton(
@@ -133,9 +164,7 @@ Widget selesaiButton() {
         'Selesai',
         style: TextStyle(fontSize: 25),
       ),
-      onPressed: () {
-        print('Pressed');
-      },
+      onPressed: () => Navigator.of(context).pushNamed('/rating'),
       style: ElevatedButton.styleFrom(
           fixedSize: Size(300, 50),
           shape: RoundedRectangleBorder(
@@ -161,29 +190,6 @@ Widget commentField() {
         isDense: true,
         contentPadding: EdgeInsets.fromLTRB(10, 40, 10, 100),
       ),
-    ),
-  );
-}
-
-Widget StarRating()
-{
-  var rating = 3.0;
-  return Align(
-    alignment: Alignment(0.0, 0.08),
-    child: SmoothStarRating(
-      rating: rating,
-      isReadOnly: false,
-      size: 40,
-      filledIconData: Icons.star,
-      halfFilledIconData: Icons.star_half,
-      defaultIconData: Icons.star_border,
-      starCount: 5,
-      allowHalfRating: false,
-      spacing: 2.0,
-      onRated: (value) {
-        print("rating value -> $value");
-        // print("rating value dd -> ${value.truncate()}");
-      },
     ),
   );
 }

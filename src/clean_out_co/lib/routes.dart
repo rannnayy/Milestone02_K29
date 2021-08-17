@@ -1,5 +1,7 @@
 import 'package:clean_out_co/pages/language.dart';
+import 'package:clean_out_co/pages/login.dart';
 import 'package:clean_out_co/pages/notif.dart';
+import 'package:clean_out_co/pages/order_rating.dart';
 import 'package:clean_out_co/pages/privacy_policy.dart';
 import 'package:clean_out_co/pages/profile_page.dart';
 import 'package:clean_out_co/pages/save_our_planet.dart';
@@ -98,8 +100,12 @@ class RouteGenerator {
         return FadeRoute(page: TermsCondition());
       case '/aboutus':
         return FadeRoute(page: TentangKami());
+      case '/login':
+        return FadeRoute(page: Login());
+      case '/orderrating':
+        return FadeRoute(page: OrderRating());
       default:
-        return FadeRoute(page: WelcomePage());
+        return FadeRoute(page: LangSetting());
     }
   }
 }

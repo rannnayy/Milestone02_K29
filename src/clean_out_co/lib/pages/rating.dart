@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class Rating extends StatefulWidget {
   static var routeName;
@@ -9,6 +10,34 @@ class Rating extends StatefulWidget {
 
 class _RatingState extends State<Rating> {
   static var routeName = '/rating';
+
+  var _initialRating = 3.0;
+  IconData? _selectedIcon;
+  late double _rating;
+
+  Widget starRating()
+  {
+    return RatingBar.builder(
+      initialRating: _initialRating,
+      minRating: 1,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      unratedColor: Colors.amber.withAlpha(50),
+      itemCount: 5,
+      itemSize: 50.0,
+      itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+      itemBuilder: (context, _) => Icon(
+        _selectedIcon ?? Icons.star,
+        color: Colors.amber,
+      ),
+      onRatingUpdate: (rating) {
+        setState(() {
+          _rating = rating;
+        });
+      },
+      updateOnDrag: true,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +57,8 @@ class _RatingState extends State<Rating> {
                     children: [
                       Padding(
                         padding: EdgeInsets.symmetric(
-                            horizontal: 61.0, vertical: 32.0),
-                        child: Image.asset('assets/Group18.png'),
+                            horizontal: 30.0, vertical: 32.0),
+                        child: starRating(),
                       ),
                       Padding(
                         padding: EdgeInsets.fromLTRB(61.0, 0.0, 61.0, 16.0),

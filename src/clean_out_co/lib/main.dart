@@ -18,6 +18,13 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.transparent,
         fontFamily: 'Montserrat',
         primarySwatch: createMaterialColor(MyColors.greenColor),
+        dividerTheme: DividerThemeData(
+          space: 10,
+          thickness: 1,
+          color: createMaterialColor(MyColors.greenColor),
+          indent: 20,
+          endIndent: 20,
+        ),
       ),
       home: WelcomePage(),
       initialRoute: '/welcomepage',

@@ -28,7 +28,7 @@ class _StepSixOrderState extends State<StepSixOrder> {
 
   void afterDelay() {
     Future.delayed(Duration(seconds: 5), () {
-      Navigator.of(context).pushNamed('/rating'); // /stepseven
+      Navigator.of(context).pushNamed('/orderrating'); // /stepseven
     });
   }
 
