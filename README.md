@@ -33,18 +33,39 @@
 
 | Nama                         | NIM      | Tugas |
 |------------------------------|----------|-------|
-| Ilham Bintang Nurmansyah     | 16520029 | hai   |
-| Maharani Ayu Putri Irawan    | 16520134 | hai   |
-| Haje Noorjamani              | 16520156 | hai   |
-| Kafi Irgie Rahmansyah        | 16520257 | hai   |
-| Dzaky Fattan Risqullah       | 16520278 | hai   |
-| Arga Daniel Reynardo Samosir | 16520310 | hai   |
-| Muhammad Fahmi Irfan         | 16520320 | hai   |
-| Farrel Ahmad                 | 16520373 | hai   |
-| Muhammad Rakha Wiratama      | 16520462 | hai   |
+| Ilham Bintang Nurmansyah     | 16520029 | Settings & Activity  |
+| Maharani Ayu Putri Irawan    | 16520134 | Take Order   |
+| Haje Noorjamani              | 16520156 | Landing Page + Sign in   |
+| Kafi Irgie Rahmansyah        | 16520257 | Homepage   |
+| Dzaky Fattan Risqullah       | 16520278 | Profile   |
+| Arga Daniel Reynardo Samosir | 16520310 | Take Order   |
+| Muhammad Fahmi Irfan         | 16520320 | Homepage   |
+| Farrel Ahmad                 | 16520373 | Take Order   |
+| Muhammad Rakha Wiratama      | 16520462 | Settings & Activity   |
 
 <br>
 
 <h2><span style="color:orange"><b>Cara Menjalankan Aplikasi <span style="color:green">CleanOut.Co</span></b></span></h2>
 <hr>
-<h4>to be filled later hehe</h4>
+<h4>Cara Instalasi</h4>
+<ol>
+    <li>Buka HP</li>
+    <li>Instal file clean_out_co_installer.apk</li>
+    <li>Buka aplikasi yang telah diinstal</li>
+</ol>
+
+<h4> Cara Registrasi Akun </h4>
+<ol>
+    <li>Tekan 'Buat baru' pada teks 'Belum punya akun? Buat baru' di laman login</li>
+    <li>Isi data diri</li>
+    <li>Tekan 'daftar'</li>
+    <li>Pilih role (role 'Customer' untuk user dan role 'Warrior' untuk para pejuang sampah)</li>
+    <li>Akun telah terdaftar</li>
+</ol>
+
+<h4> Cara Pemesanan </h4>
+<ol>
+    <li>Tekan pesan di homepage</li>
+    <li>Ikuti langkah-langkahnya</li>
+    <li>Beri rating</li>
+</ol>
